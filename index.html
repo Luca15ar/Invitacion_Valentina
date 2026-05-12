@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titulo -->
+    <title>XV de Valentina</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/img/mariposa_favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <p class="frase">"Los sueños se vuelven más hermosos cuando se comparten con las personas que queremos. Por eso te invito a ser parte de esta noche mágica e inolvidable para mí."
+        </p>
+
+        <img class="queen-crown" src="./assets/img/queen-crown.png" alt="Crown image">
+        <h1>MIS XV AÑOS</h1>
+
+        <h2>Valentina<br>Saldungaray</h2>
+
+        <div class="music-player-container">
+            <audio id="musica" src="./assets/Maria Becerra - DESAFIANDO EL DESTINO (Official Video).mp3" loop></audio>
+            <img class="barra-reproduccion" src="./assets/img/barra_reproduccion.png" alt="barra-reproduccion">
+            <div class="music-player-btn-container">
+                <img class="retroceder-btn" src="./assets/img/retroceder_btn.png" alt="retroceder-btn" onclick="retroceder()">
+                <img id="reproducir-btn" src="./assets/img/reproducir_btn.png" alt="reproducir-btn" onclick="toggleMusica()">
+                <img class="adelantar-btn" src="./assets/img/adelantar_btn.png" alt="adelantar-btn" onclick="adelantar()">
+            </div>
+        </div>
+
+        <div class="calendario-container">
+            <p class="mes">JUNIO</p>
+            
+            <div class="fecha-container">
+                <p class="dia">VIERNES</p>
+                <p class="fecha">19</p>
+                <p class="año">2026</p>
+            </div>
+        </div>
+
+        <h4 class="horario">21:30 - 05:30</h4>
+    </header>
+
+    <main>
+        <!-- Contador regresivo -->
+        <section id="contador-regresivo">
+            <h3>FALTAN</h3>
+            <img class="marco-contador" src="./assets/img/marco.png" alt="marco-contador">
+            <div class="contador-regresivo-container">
+                <div class="contador-bloque">
+                    <span id="days" class="contador-numero"></span>
+                    <span id="dias" class="contador-label">Días</span>
+                </div>
+                
+                <div class="contador-bloque">
+                    <span id="hours" class="contador-numero"></span>
+                    <span id="horas" class="contador-label">Horas</span>
+                </div>
+                
+                <div class="contador-bloque">
+                    <span id="minutes" class="contador-numero"></span>
+                    <span id="minutos" class="contador-label">Min</span>
+                </div>
+                
+                <div class="contador-bloque">
+                    <span id="seconds" class="contador-numero"></span>
+                    <span id="segundos" class="contador-label">Seg</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="detalles">
+            <div class="ubicacion-container">
+                <img class="iconos" src="./assets/img/location_icon.png" alt="location-img">
+                <h3>LUGAR</h3>
+                <p class="detalle-lugar">Av. Crisólogo Larralde 1050, Avellaneda</p>
+                <a href="https://maps.app.goo.gl/uzycEWGxDAjYMUU9A" target="_blank">
+                    <button id="ubicacion">Ver ubicación</button>
+                </a>
+            </div>
+
+            <div class="vestimenta-container">
+                <h3>CÓDIGO DE VESTIMENTA</h3>
+                <p class="p-vestimenta">Elegante Sport</p>
+                <div class="vestimenta-img">
+                    <img class="vestimenta" src="./assets/img/vestimenta.png" alt="vestimenta-img">
+                </div>
+            </div>
+
+            <div class="confirmacion-container">
+                <img class="iconos" src="./assets/img/whatsapp_icon.png" alt="whatsapp-icon">
+                <h3>CONFIRMAR ASISTENCIA</h3>
+                <button id="confirmacion" onclick="window.open('https://wa.me/5491168065303?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20los%2015.', '_blank')">
+                    Confirmar aquí
+                </button>
+            </div>
+
+            <div class="regalos-container">
+                <img class="iconos" src="./assets/img/gift_icon.png" alt="gift-img">
+                <div class="regalos-texto">
+                    <h3>SUGERENCIA DE REGALOS</h3>
+                    <p class="p-regalos">Tu presencia vale muchísimo para mí. Y si querés sumarle un mimo más, una ayudita para mis sueños será súper agradecida:</p>
+                    <h3 class="transferencia">TRANSFERENCIA</h3>
+                    <img class="iconos" src="./assets/img/tarjeta-de-regalo.png" alt="gift-card-img">
+                    <h3>Valen.saldun</h3>
+                </div>
+            </div>
+
+            <div class="agradecimientos">
+                <!-- <h5>ESPERAMOS CONTAR CON TU PRESENCIA</h5> -->
+
+                <h2 class="agradecimiento">¡Te esperamos!</h2>
+            </div>
+        </section>
+    </main>
+        
+    <footer>
+        <h5 class="copyright">Made by Luca Areco © 2026<h5p>
+    </footer>
+
+    <script>
+        const musica = document.getElementById('musica');
+        const reproducir = document.getElementById('reproducir-btn');
+
+        function toggleMusica() 
+        {
+            if (musica.paused) 
+            {
+                musica.play();
+                reproducir.src = "./assets/img/pausa_btn.png"
+            } 
+            else 
+            {
+                musica.pause();
+                reproducir.src = "./assets/img/reproducir_btn.png"
+            }
+        }
+
+        function adelantar() 
+        {
+            musica.currentTime += 10; // Avanza 10 segundos
+        }
+
+        function retroceder() 
+        {
+            musica.currentTime -= 10; // Retrocede 10 segundos
+            if (musica.currentTime < 0) musica.currentTime = 0; // Evita ir antes del inicio
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { 
+
+            const DATE_TARGET = new Date('06/19/2026 09:30 PM');
+            
+            // Seleccionamos la sección completa del contador
+            const CONTENEDOR_PRINCIPAL = document.querySelector('#contador-regresivo');
+
+            const SPAN_DAYS = document.querySelector('span#days');
+            const SPAN_HOURS = document.querySelector('span#hours');
+            const SPAN_MINUTES = document.querySelector('span#minutes');
+            const SPAN_SECONDS = document.querySelector('span#seconds');
+            
+            const MILLISECONDS_OF_A_SECOND = 1000;
+            const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+            const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+            const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24;
+
+            let intervalId;
+
+            function updateCountdown() 
+            {
+                const NOW = new Date();
+                const DURATION = DATE_TARGET - NOW;
+
+                if (DURATION <= 0) 
+                {
+                    clearInterval(intervalId);
+                    
+                    CONTENEDOR_PRINCIPAL.innerHTML = `
+                        <h2 class="h2-contador">
+                            ¡Gracias por venir!
+                        </h2>`;
+                    return; 
+                }
+
+                const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+                const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+                const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+                const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+
+                if(SPAN_DAYS) SPAN_DAYS.textContent = REMAINING_DAYS;
+                if(SPAN_HOURS) SPAN_HOURS.textContent = REMAINING_HOURS;
+                if(SPAN_MINUTES) SPAN_MINUTES.textContent = REMAINING_MINUTES;
+                if(SPAN_SECONDS) SPAN_SECONDS.textContent = REMAINING_SECONDS;
+            }
+
+            updateCountdown();
+            intervalId = setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+        });
+    </script>
+</body>
+</html>

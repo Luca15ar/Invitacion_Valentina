@@ -1,0 +1,393 @@
+/* --- Estilos generales --- */
+@font-face
+{
+    font-family: 'Mrs Saint Delafield';
+    src: url("./assets/fonts/Mrs_Saint_Delafield/MrsSaintDelafield-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Playfair Display';
+    src: url("./assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+    font-style: normal;
+}
+
+*
+{
+    font-family: 'Playfair Display';
+}
+
+body 
+{
+    background-image: url("./assets/img/fondo\(mobile\).png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+p
+{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'Marcellus', serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.copyright
+{
+    font-size: smaller;
+}
+
+h1
+{
+    color: #5C1A1B;
+    font-size: 30px;
+    margin-top: 0;
+}
+
+h2
+{
+    font-family: "Mrs Saint Delafield";
+    font-weight: normal;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 3.5rem;
+    color: #1D2D44;
+    /* color: #D4AF37; */
+}
+
+.agradecimiento
+{
+    color: #5C1A1B; 
+}
+
+h3
+{
+    color: #5C1A1B;
+    margin: 2.5%;
+    font-size: larger;
+}
+
+.transferencia
+{
+    margin-top: 0;
+    color: #b64749;
+    font-weight: bolder;
+}
+
+h4
+{
+    margin-top: 0;
+}
+
+.horario
+{
+    margin-top: 21.28px;
+}
+
+h5
+{
+    text-align: center;
+}
+
+/* --- Estilos del encabezado --- */
+header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.frase
+{
+    margin-top: 30%;
+    margin-bottom: 15%;
+    width: 75%;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: larger;
+}
+
+.calendario-container
+{
+    width: 50%;
+}
+
+.fecha-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.fecha
+{
+    font-family: 'Mrs Saint Delafield';
+    font-size: 35px;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height: 1;
+    margin: 0;
+    color: #5C1A1B;
+}
+
+.dia, .año
+{
+    flex: 1;
+    border-top: solid #5C1A1B 2px;
+    border-bottom: solid #5C1A1B 2px;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 2.5%;
+}
+
+.music-player-btn-container
+{
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+
+.dia
+{
+    padding-right: 0;
+}
+
+.año
+{
+    padding-left: 0;
+    text-align: right;
+}
+
+.queen-crown
+{
+    width: 30%;
+}
+
+/* --- Estilos del contenedor principal --- */
+#contador-regresivo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    gap: 5%;
+}
+
+/* -- Detalles del evento --*/
+#detalles
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detalle-lugar
+{
+    color: black;
+}
+
+/* -- Contador regresivo --*/
+.contador-regresivo-container
+{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.contador-bloque
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contador-numero
+{
+    color: #5C1A1B;
+    font-size: 39px;
+    line-height: 1;
+}
+
+.contador-label 
+{
+    color: #5C1A1B;
+    font-size: 17px;
+    font-family: 'Playfair Display';
+    margin-top: 5px;
+}
+
+.marco-contador
+{
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    z-index: -1;
+}
+
+.h2-contador
+{
+    margin: 0;
+    color: #5C1A1B; 
+    font-size: 3rem;
+}
+
+#seconds, #segundos 
+{
+    color: #b64749;
+}
+
+/* -- Ubicación del evento -- */
+.iconos
+{
+    width: 12.5%;
+}
+
+.ubicacion-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+/* -- Vestimenta del evento -- */
+.vestimenta-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.vestimenta-img
+{
+    display: flex;
+    justify-content: center;
+}
+
+.p-vestimenta
+{
+    margin: 0;
+}
+
+.vestimenta
+{
+    width: 40%;
+}
+
+/* -- Confirmación de asistencia -- */
+.confirmacion-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+/* -- Sugerencia de regalos -- */
+.regalos-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.regalos-texto
+{
+    width: 75%;
+    text-align: center;
+}
+
+.p-regalos
+{
+    margin-bottom: 2.5%;
+}
+
+/* -- Botones -- */
+#ubicacion, #confirmacion
+{
+    background-color: #B59157;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* -- Reproductor de música -- */
+.music-player-btn-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    margin-top: 0;
+}
+
+.barra-reproduccion
+{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.retroceder-btn, .adelantar-btn
+{
+    width: 5%;
+    cursor: pointer;
+}
+
+#reproducir-btn, #pausar-btn
+{
+    width: 12%;
+    cursor: pointer;
+}
+
+/* -- Media query -- */
+@media (min-width: 768px) 
+{
+    body 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("./assets/img/fondo.png");
+        background-size: cover;
+    }
+
+    header, main, footer 
+    {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .frase 
+    {
+        margin-top: 15%; 
+    }
+
+    .marco-contador
+    {
+        width: 35%;
+        height: 25%;
+    }
+}
